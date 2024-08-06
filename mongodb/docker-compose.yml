@@ -159,27 +159,27 @@ services:
         constraints:
           - node.labels.mongo.shard == 6
 
-  #mongo_express:
-   # image: mongo-express:0.54.0
-    #networks:
-     # - mongo-net
-    #environment:
-     # - ME_CONFIG_OPTIONS_EDITORTHEME=default
-      #- ME_CONFIG_MONGODB_SERVER=mongo_mongos
-      #- ME_CONFIG_MONGODB_PORT=27017
-    #ports:
-     # - "8081:8081"
-    #deploy:
-     # mode: replicated
-      #replicas: 1
-     # update_config:
-      #  parallelism: 2
-       # delay: 10s
-      #placement:
-       # constraints:
-        #  - node.role == manager
-    #depends_on:
-     # - mongo_mongos
+  mongo_express:
+    image: mongo-express:0.54.0
+    networks:
+      - mongo-net
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=default
+      - ME_CONFIG_MONGODB_SERVER=mongo_mongos
+      - ME_CONFIG_MONGODB_PORT=27017
+    ports:
+      - "8081:8081"
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      placement:
+        constraints:
+          - node.role == manager
+    depends_on:
+      - mongo_mongos
 
 networks:
   mongo-net:
@@ -195,4 +195,3 @@ volumes:
   mongoData4:
   mongoData5:
   mongoData6:
-picocluster64
