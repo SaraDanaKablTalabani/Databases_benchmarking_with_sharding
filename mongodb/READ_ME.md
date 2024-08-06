@@ -93,3 +93,11 @@ sh.addShard("shardReplSet5/mongo_db5:27025")
 sh.addShard("shardReplSet6/mongo_db6:27026")
 
 with this setup we have a MongoDB sharded cluster with 9 nodes, ready for benchmarking. we should load the database with high record counts to see the effect of the sharding.
+
+loading
+
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloada -threads 16 -p mongodb.url="mongodb://ycsbUser:ycsbPassword@10.0.13.240:27017/admin?w=1&readPreference=primary"
+
+transaction
+
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloada -threads 16 -p mongodb.url="mongodb://ycsbUser:ycsbPassword@10.0.13.240:27017/admin?w=1&readPreference=primary"
