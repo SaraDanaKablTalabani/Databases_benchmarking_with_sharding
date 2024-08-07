@@ -1,0 +1,57 @@
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloada -threads 16 -p mongodb.url="mongodb://ycsbUser:ycsbPassword@10.0.13.240:27017/admin?w=1&readPreference=primary"
+java -cp /home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/mongodb-binding/conf:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/conf:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongodb-binding-0.17.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/core-0.17.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/slf4j-api-1.7.25.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/snappy-java-1.1.7.1.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/logback-core-1.1.2.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongodb-async-driver-2.0.1.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/logback-classic-1.1.2.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongo-java-driver-3.8.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/HdrHistogram-2.1.4.jar site.ycsb.Client -db site.ycsb.db.MongoDbClient -s -P workloads/workloada -threads 16 -p mongodb.url=mongodb://ycsbUser:ycsbPassword@10.0.13.240:27017/admin?w=1&readPreference=primary -load
+Command line: -db site.ycsb.db.MongoDbClient -s -P workloads/workloada -threads 16 -p mongodb.url=mongodb://ycsbUser:ycsbPassword@10.0.13.240:27017/admin?w=1&readPreference=primary -load
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+2024-08-07 15:35:46:028 0 sec: 0 operations; est completion in 0 second
+mongo client connection created with mongodb://ycsbUser:ycsbPassword@10.0.13.240:27017/admin?w=1&readPreference=primary
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-08-07 15:35:55:844 10 sec: 4455 operations; 445.32 current ops/sec; est completion in 2 minutes [INSERT: Count=4487, Max=1462271, Min=4176, Avg=28001.13, 90=37471, 99=61119, 99.9=1443839, 99.99=1462271]
+2024-08-07 15:36:05:842 20 sec: 13892 operations; 943.79 current ops/sec; est completion in 1 minute [INSERT: Count=9413, Max=188287, Min=2992, Avg=16832.89, 90=26175, 99=50751, 99.9=163455, 99.99=182015]
+2024-08-07 15:36:15:839 30 sec: 22480 operations; 859.06 current ops/sec; est completion in 1 minute [INSERT: Count=8580, Max=1977343, Min=2744, Avg=18513.72, 90=23519, 99=41599, 99.9=1967103, 99.99=1977343]
+2024-08-07 15:36:25:839 40 sec: 38210 operations; 1573 current ops/sec; est completion in 44 seconds [INSERT: Count=15732, Max=893439, Min=2272, Avg=10135.98, 90=14159, 99=24223, 99.9=50495, 99.99=765439]
+2024-08-07 15:36:35:839 50 sec: 55412 operations; 1720.2 current ops/sec; est completion in 23 seconds [INSERT: Count=17201, Max=112703, Min=2296, Avg=9265.16, 90=13863, 99=21855, 99.9=53919, 99.99=75519]
+2024-08-07 15:36:45:838 60 sec: 72826 operations; 1741.4 current ops/sec; est completion in 6 second [INSERT: Count=17414, Max=46431, Min=2286, Avg=9161.62, 90=13863, 99=20879, 99.9=29679, 99.99=37439]
+2024-08-07 15:36:50:073 64 sec: 80000 operations; 1694.38 current ops/sec; [CLEANUP: Count=16, Max=20799, Min=3, Avg=1318.12, 90=24, 99=20799, 99.9=20799, 99.99=20799] [INSERT: Count=7173, Max=43519, Min=2206, Avg=8979.86, 90=13743, 99=20767, 99.9=29039, 99.99=41087]
+[OVERALL], RunTime(ms), 64234
+[OVERALL], Throughput(ops/sec), 1245.4463368309619
+[TOTAL_GCS_G1_Young_Generation], Count, 24
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 266
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.4141109069962948
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 24
+[TOTAL_GC_TIME], Time(ms), 266
+[TOTAL_GC_TIME_%], Time(%), 0.4141109069962948
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 1318.125
+[CLEANUP], MinLatency(us), 3
+[CLEANUP], MaxLatency(us), 20799
+[CLEANUP], 95thPercentileLatency(us), 208
+[CLEANUP], 99thPercentileLatency(us), 20799
+[INSERT], Operations, 80000
+[INSERT], AverageLatency(us), 12321.487825
+[INSERT], MinLatency(us), 2206
+[INSERT], MaxLatency(us), 1977343
+[INSERT], 95thPercentileLatency(us), 24495
+[INSERT], 99thPercentileLatency(us), 38623
+[INSERT], Return=OK, 80000
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $
