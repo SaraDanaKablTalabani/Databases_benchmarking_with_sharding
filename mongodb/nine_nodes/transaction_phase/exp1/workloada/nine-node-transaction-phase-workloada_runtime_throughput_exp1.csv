@@ -1,0 +1,6 @@
+﻿operationcount,RunTime,Throughput,,,,,,,,"[TOTAL_GC_TIME], Time(ms)","[TOTAL_GC_TIME_%], Time(%)","[READ], Operations","[READ], AverageLatency(us)","[READ], MinLatency(us)","[READ], MaxLatency(us)","[READ], 95thPercentileLatency(us)","[READ], 99thPercentileLatency(us)","[READ], Return=OK,","[CLEANUP], Operations,","[CLEANUP], AverageLatency(us),","[CLEANUP], MinLatency(us),","[CLEANUP], MaxLatency(us),","[CLEANUP], 95thPercentileLatency(us),","[CLEANUP], 99thPercentileLatency(us),","[UPDATE], Operations,","[UPDATE], AverageLatency(us),","[UPDATE], MinLatency(us),","[UPDATE], MaxLatency(us),","[UPDATE], 95thPercentileLatency(us)","[UPDATE], 99thPercentileLatency(us)","[UPDATE], Return=OK"
+60000,53565,1120.134416,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+70000,66177,1057.769316,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+80000,67806,1179.836593,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+90000,72285,1245.071592,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+100000,77371,1292.473924,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
