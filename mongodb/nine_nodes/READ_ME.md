@@ -104,3 +104,5 @@ picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb
 
 sudo docker restart <mongos_container_id>
 
+mongos> sh.enableSharding("ycsb")
+
