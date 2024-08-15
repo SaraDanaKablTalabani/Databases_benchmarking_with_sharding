@@ -5,15 +5,23 @@ Mongo Express (mongo_express): Provides a web-based MongoDB admin interface conn
 
 Lebels
 
-docker node update --label-add mongo.config=1 <node-id-1>
-docker node update --label-add mongo.config=2 <node-id-2>
-docker node update --label-add mongo.config=3 <node-id-3>
-docker node update --label-add mongo.shard=1 <node-id-4>
-docker node update --label-add mongo.shard=2 <node-id-5>
-docker node update --label-add mongo.shard=3 <node-id-6>
-docker node update --label-add mongo.shard=4 <node-id-7>
-docker node update --label-add mongo.shard=5 <node-id-8>
-docker node update --label-add mongo.shard=6 <node-id-9>
+sudo docker node update --label-add mongo.config=1 pc0
+
+sudo docker node update --label-add mongo.config=2 pc1
+
+sudo docker node update --label-add mongo.config=3 pc2
+
+sudo docker node update --label-add mongo.shard=1 pc3
+
+sudo docker node update --label-add mongo.shard=2 pc4
+
+sudo docker node update --label-add mongo.shard=3 pc20
+
+sudo docker node update --label-add mongo.shard=4 pc21
+
+sudo docker node update --label-add mongo.shard=5 pc22
+
+sudo docker node update --label-add mongo.shard=6 pc23
 
 
 docker stack deploy -c docker-compose.yml mongo_cluster
