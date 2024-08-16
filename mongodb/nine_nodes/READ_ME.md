@@ -170,4 +170,12 @@ picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb
 
 ............
 
+use ycsb
+
+db.usertable.deleteMany({})
+
+db.usertable.drop()
+
+
+
 
