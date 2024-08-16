@@ -176,6 +176,12 @@ db.usertable.deleteMany({})
 
 db.usertable.drop()
 
+links:
+
+https://www.mongodb.com/docs/manual/sharding/
+
+https://www.youtube.com/watch?v=mjSNKjTzeao
+
 
 
 
