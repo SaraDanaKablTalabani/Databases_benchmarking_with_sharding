@@ -112,5 +112,27 @@ picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb
 
 sudo docker restart <mongos_container_id>
 
+........................
+
 mongos> sh.enableSharding("ycsb")
+
+.......................
+
+Shard Key: The shard key determines how documents are distributed across the shards. Using a hashed shard key (e.g., { _id: "hashed" }) ensures even distribution of documents across the shards by hashing the key values.
+
+..............
+
+
+ndex Requirement: MongoDB requires an index starting with the shard key for sharding. This ensures that queries can efficiently target the appropriate shard(s) and avoid scatter-gather queries.
+
+
+commands to achieve that:
+
+use ycsb;
+
+db.usertable.createIndex({ _id: "hashed" });
+
+sh.shardCollection("ycsb.usertable", { _id: "hashed" });
+
+................
 
