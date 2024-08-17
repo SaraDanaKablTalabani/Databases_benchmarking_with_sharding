@@ -139,13 +139,6 @@ index Requirement: MongoDB requires an index starting with the shard key for sha
 
 commands to achieve that:
 
-use ycsb;
-
-db.usertable.createIndex({ _id: "hashed" });
-
-sh.shardCollection("ycsb.usertable", { _id: "hashed" });
-
-................
 
 mongos> use ycsb
 
@@ -153,7 +146,9 @@ switched to db ycsb
 
 mongos> db.createCollection("usertable")
 
-mongos> sh.shardCollection("ycsb.usertable", { _id: "hashed" })
+db.usertable.createIndex({ _id: "hashed" });
+
+sh.shardCollection("ycsb.usertable", { _id: "hashed" });
 
 ................
 
@@ -175,6 +170,16 @@ use ycsb
 db.usertable.deleteMany({})
 
 db.usertable.drop()
+
+show collections
+
+db.getLastErrorObj()
+
+use config
+
+db.shards.find()
+
+I modified all the data with the new method.
 
 links:
 
