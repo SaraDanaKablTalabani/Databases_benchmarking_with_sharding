@@ -193,6 +193,20 @@ for the transaction:
 
 picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloada -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/ycsb"
 
+.................
+
+how to list and make database in mongo shell?
+
+show dbs
+use myNewDatabase
+db.myCollection.insert({ name: "MongoDB", type: "Database" })
+
+show collections
+
+use ycsb
+
+
+
 links:
 
 https://www.mongodb.com/docs/manual/sharding/
