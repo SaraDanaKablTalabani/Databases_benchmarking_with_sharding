@@ -217,6 +217,14 @@ db.usertable.find().limit(10).pretty()
 
 db.usertable.find({}, { field1: 1, field2: 1 }).pretty()
 
+....................
+
+sh.status()
+
+rs.status()
+
+........................
+
 links:
 
 https://www.mongodb.com/docs/manual/sharding/
