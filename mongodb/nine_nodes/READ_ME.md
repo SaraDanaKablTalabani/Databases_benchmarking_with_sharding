@@ -233,6 +233,12 @@ mongo --host mongo_db1 --port 27018
 
 rs.status()
 
+.................
+
+Check Data Distribution: Use the db.getSiblingDB('ycsb').usertable.stats() command to confirm the distribution of data across shards.
+
+
+
 ...................
 
 links:
