@@ -181,6 +181,18 @@ db.shards.find()
 
 I modified all the data with the new method.
 
+.........................
+
+this is the command that with the last modification for 
+
+the loading:
+
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloada -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/ycsb"
+
+for the transaction:
+
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloada -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/ycsb"
+
 links:
 
 https://www.mongodb.com/docs/manual/sharding/
