@@ -225,6 +225,16 @@ rs.status()
 
 ........................
 
+to check the status of the replica set:
+
+connect to one of the mongod shards and check the status as follows:
+
+mongo --host mongo_db1 --port 27018
+
+rs.status()
+
+...................
+
 links:
 
 https://www.mongodb.com/docs/manual/sharding/
