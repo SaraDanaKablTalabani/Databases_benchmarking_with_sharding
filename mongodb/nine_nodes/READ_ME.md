@@ -205,7 +205,17 @@ show collections
 
 use ycsb
 
+..................
 
+how to show the content of the usertable?
+
+use ycsb
+
+db.usertable.find().pretty()
+
+db.usertable.find().limit(10).pretty()
+
+db.usertable.find({}, { field1: 1, field2: 1 }).pretty()
 
 links:
 
