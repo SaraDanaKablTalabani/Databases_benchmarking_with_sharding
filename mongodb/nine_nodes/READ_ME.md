@@ -245,6 +245,11 @@ this is after loading 60000 record counts:
 
 ...................
 
+![image](https://github.com/user-attachments/assets/0f7fb680-c6b6-4e57-b408-eb0df4d4b853)
+
+
+...................
+
 links:
 
 https://www.mongodb.com/docs/manual/sharding/
