@@ -237,7 +237,11 @@ rs.status()
 
 Check Data Distribution: Use the db.getSiblingDB('ycsb').usertable.stats() command to confirm the distribution of data across shards.
 
+..................
 
+this is after loading 60000 record counts:
+
+![image](https://github.com/user-attachments/assets/a51d1822-1b47-4e78-b870-ef39455d6b83)
 
 ...................
 
