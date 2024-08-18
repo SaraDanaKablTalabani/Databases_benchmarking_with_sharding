@@ -1,0 +1,58 @@
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadc -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/ycsb"
+java -cp /home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/mongodb-binding/conf:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/conf:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongodb-binding-0.17.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/core-0.17.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/slf4j-api-1.7.25.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/snappy-java-1.1.7.1.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/logback-core-1.1.2.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongodb-async-driver-2.0.1.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/logback-classic-1.1.2.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongo-java-driver-3.8.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/HdrHistogram-2.1.4.jar site.ycsb.Client -db site.ycsb.db.MongoDbClient -s -P workloads/workloadc -threads 16 -p mongodb.url=mongodb://10.0.13.240:27017/ycsb -t
+Command line: -db site.ycsb.db.MongoDbClient -s -P workloads/workloadc -threads 16 -p mongodb.url=mongodb://10.0.13.240:27017/ycsb -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+2024-08-18 16:45:28:272 0 sec: 0 operations; est completion in 0 second
+mongo client connection created with mongodb://10.0.13.240:27017/ycsb
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-08-18 16:45:38:106 10 sec: 4787 operations; 478.56 current ops/sec; est completion in 2 minutes [READ: Count=4804, Max=423935, Min=4096, Avg=26065.97, 90=41887, 99=66559, 99.9=420351, 99.99=423935]
+2024-08-18 16:45:48:103 20 sec: 14193 operations; 940.88 current ops/sec; est completion in 1 minute [READ: Count=9390, Max=73215, Min=3408, Avg=16836.57, 90=26207, 99=41535, 99.9=62431, 99.99=71615]
+2024-08-18 16:45:58:105 30 sec: 23164 operations; 896.92 current ops/sec; est completion in 1 minute [READ: Count=8972, Max=89279, Min=3348, Avg=17757.96, 90=27839, 99=43999, 99.9=64095, 99.99=78271]
+2024-08-18 16:46:08:103 40 sec: 38736 operations; 1557.51 current ops/sec; est completion in 53 seconds [READ: Count=15570, Max=46463, Min=2736, Avg=10240.67, 90=15343, 99=24815, 99.9=34303, 99.99=41279]
+2024-08-18 16:46:18:103 50 sec: 52126 operations; 1339 current ops/sec; est completion in 37 seconds [READ: Count=13391, Max=1087487, Min=2710, Avg=11910.94, 90=16383, 99=29359, 99.9=1062911, 99.99=1083391]
+2024-08-18 16:46:28:103 60 sec: 68264 operations; 1613.8 current ops/sec; est completion in 20 seconds [READ: Count=16137, Max=46431, Min=2554, Avg=9882.06, 90=14575, 99=20687, 99.9=27599, 99.99=37695]
+2024-08-18 16:46:38:103 70 sec: 84523 operations; 1625.9 current ops/sec; est completion in 5 second [READ: Count=16261, Max=36319, Min=2654, Avg=9813.6, 90=14495, 99=20687, 99.9=28831, 99.99=35103]
+2024-08-18 16:46:41:725 73 sec: 90000 operations; 1511.73 current ops/sec; [READ: Count=5475, Max=55935, Min=2410, Avg=9704.25, 90=14743, 99=24447, 99.9=43295, 99.99=52479] [CLEANUP: Count=16, Max=26559, Min=3, Avg=1666.19, 90=9, 99=26559, 99.9=26559, 99.99=26559]
+[OVERALL], RunTime(ms), 73622
+[OVERALL], Throughput(ops/sec), 1222.4606775148732
+[TOTAL_GCS_G1_Young_Generation], Count, 39
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 359
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.4876259813642661
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 39
+[TOTAL_GC_TIME], Time(ms), 359
+[TOTAL_GC_TIME_%], Time(%), 0.4876259813642661
+[READ], Operations, 90000
+[READ], AverageLatency(us), 12597.375766666666
+[READ], MinLatency(us), 2410
+[READ], MaxLatency(us), 1087487
+[READ], 95thPercentileLatency(us), 25903
+[READ], 99thPercentileLatency(us), 39519
+[READ], Return=OK, 90000
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 1666.1875
+[CLEANUP], MinLatency(us), 3
+[CLEANUP], MaxLatency(us), 26559
+[CLEANUP], 95thPercentileLatency(us), 18
+[CLEANUP], 99thPercentileLatency(us), 26559
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $
