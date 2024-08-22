@@ -1,0 +1,193 @@
+version: '3.7'
+
+services:
+  cassandra_seed:
+    image: cassandra:latest
+    container_name: cassandra-seed
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+#      - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+#      - CASSANDRA_DC=datacenter1
+
+#      - CASSANDRA_RACK=rack1
+    ports:
+      - "9042:9042"
+    volumes:
+      - cassandra-seed-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.seed == 1
+
+  cassandra_node1:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+ #     - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+  #    - CASSANDRA_DC=datacenter1
+ #     - CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra-node1-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.shard == 1
+
+  cassandra_node2:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+  #    - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+
+#   - CASSANDRA_DC=datacenter1
+ #     - CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra-node2-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.shard == 2
+
+  cassandra_node3:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+   #   - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+  #    - CASSANDRA_DC=datacenter1
+   #   - CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra-node3-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.shard == 3
+
+  cassandra_node4:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+    #  - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+    #  - CASSANDRA_DC=datacenter1
+     # - CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra-node4-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.shard == 4
+
+  cassandra_node5:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+     # - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+      #- CASSANDRA_DC=datacenter1
+      #- CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra-node5-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.shard == 5
+
+  cassandra_node6:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+      #- CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+     # - CASSANDRA_DC=datacenter1
+     # - CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra-node6-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.shard == 6
+
+  cassandra_node7:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+      #- CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+      #- CASSANDRA_DC=datacenter1
+     # - CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra-node7-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.shard == 7
+
+  cassandra_node8:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_CLUSTER_NAME=myCluster
+      #- CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_SEEDS=cassandra_seed
+      #- CASSANDRA_DC=datacenter1
+      #- CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra-node8-data:/var/lib/cassandra
+    networks:
+      - cassandra-net
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.cassandra.shard == 8
+
+networks:
+  cassandra-net:
+    driver: overlay
+
+volumes:
+  cassandra-seed-data:
+  cassandra-node1-data:
+  cassandra-node2-data:
+  cassandra-node3-data:
+  cassandra-node4-data:
+  cassandra-node5-data:
+  cassandra-node6-data:
+  cassandra-node7-data:
+  cassandra-node8-data:
