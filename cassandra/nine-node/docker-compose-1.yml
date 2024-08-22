@@ -1,3 +1,4 @@
+picocluster64@pc0:~ $ sudo cat cassandra.yml
 version: '3.7'
 
 services:
@@ -138,7 +139,7 @@ services:
         constraints:
           - node.labels.cassandra.node == 5
     volumes:
-      - cassandra-node4-data:/var/lib/cassandra
+      - cassandra-node5-data:/var/lib/cassandra
     command: "cassandra -f"
 
   cassandra-node6:
@@ -158,7 +159,7 @@ services:
         constraints:
           - node.labels.cassandra.node == 6
     volumes:
-      - cassandra-node4-data:/var/lib/cassandra
+      - cassandra-node6-data:/var/lib/cassandra
     command: "cassandra -f"
   cassandra-node7:
     image: cassandra:latest
@@ -177,7 +178,7 @@ services:
         constraints:
           - node.labels.cassandra.node == 7
     volumes:
-      - cassandra-node4-data:/var/lib/cassandra
+      - cassandra-node7-data:/var/lib/cassandra
     command: "cassandra -f"
 networks:
   cassandra-net:
@@ -190,3 +191,6 @@ volumes:
   cassandra-node2-data:
   cassandra-node3-data:
   cassandra-node4-data:
+  cassandra-node5-data:
+  cassandra-node6-data:
+  cassandra-node7-data:
