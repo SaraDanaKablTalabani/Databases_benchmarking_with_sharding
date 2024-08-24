@@ -226,6 +226,16 @@ CREATE TABLE ycsb.usertable (
 
 .......................
 
+links:
 
+https://github.com/bioatlas/ala-docker/blob/master/swarm-cassandra-cluster.yml
+
+https://github.com/sukolupo/cassandra-docker-swarm/blob/master/README.md
+
+https://github.com/bioatlas/ala-docker/blob/master/swarm-cassandra-cluster.yml
+
+https://github.com/digitalis-io/ccc/blob/master/docker-compose.yml
+
+https://medium.com/@kayvan.sol2/deploying-apache-cassandra-cluster-3-nodes-with-docker-compose-3634ef8345e8
 
   
