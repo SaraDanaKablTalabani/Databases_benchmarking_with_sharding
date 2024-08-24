@@ -223,6 +223,72 @@ CREATE TABLE ycsb.usertable (
 
 ![image](https://github.com/user-attachments/assets/90f9e09c-825d-47a4-8d82-add3b7a37026)
 
+.......................
+
+steps after the containers are up and running:
+
+access the seed container which deployed in our case on the pc0 which the manger node
+then execute this sudo docker exec -it <cassandra-container-id> cqlsh
+
+ after that we make a keyspace like this:
+
+ CREATE KEYSPACE ycsb WITH REPLICATION = {
+  'class': 'NetworkTopologyStrategy',
+  'my-datacenter-1': 6
+};
+
+Verify the Keyspace Creation
+
+DESCRIBE KEYSPACE ycsb;
+
+USE ycsb;
+
+create table usertable (
+
+y_id varchar primary key,
+
+field0 varchar,
+
+field1 varchar,
+
+field2 varchar,
+
+field3 varchar,
+
+field4 varchar,
+
+field5 varchar,
+
+field6 varchar,
+
+field7 varchar,
+
+field8 varchar,
+
+field9 varchar);
+
+TRUNCATE usertable;
+
+verify
+
+SELECT * FROM usertable;
+
+DESCRIBE TABLES;
+
+
+....................
+
+Primary Key (y_id): The y_id is the partition key. In Cassandra, the partition key determines how data is distributed across nodes. Data with the same partition key is stored together, while different partition keys are spread across the cluster.
+
+Partitioning Strategy: By default, Cassandra uses a consistent hashing algorithm for partitioning data. This consistent hashing ensures that data is distributed evenly across all nodes in the cluster.
+
+..................
+
+then the commmand to load: picocluster64@pc24:~/fe5/ycsb-cassandra-binding-0.17.0 $ sudo ./bin/ycsb load cassandra-cql -s -P workloads/workloada -threads 16 -p hosts="10.0.13.234" -p port=9042 -p cassandra.username=admin -p cassandra.password=admin
+
+transaction: picocluster64@pc24:~/fe5/ycsb-cassandra-binding-0.17.0 $ sudo ./bin/ycsb run cassandra-cql -s -P workloads/workloada -threads 16 -p hosts="10.0.13.234" -p port=9042 -p cassandra.username=admin -p cassandra.password=admin
+
+
 
 .......................
 
