@@ -190,3 +190,38 @@ volumes:
   cassandra-node2-data:
   cassandra-node3-data:
   cassandra-node4-data:
+  .................
+
+Checking Cassandra Cluster Status:
+
+# Run this inside one of the Cassandra containers:
+
+nodetool status
+
+...............
+
+To check data distribution and replication, you can use:
+
+nodetool ring
+
+.............
+
+Designing the Schema with a Proper Partition Key
+
+CREATE TABLE ycsb.usertable (
+  user_id UUID,
+  region TEXT,
+  data TEXT,
+  PRIMARY KEY ((user_id, region))
+);
+
+.......................
+
+![image](https://github.com/user-attachments/assets/90f9e09c-825d-47a4-8d82-add3b7a37026)
+
+
+.......................
+
+
+
+  
