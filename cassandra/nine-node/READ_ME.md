@@ -304,4 +304,6 @@ https://github.com/digitalis-io/ccc/blob/master/docker-compose.yml
 
 https://medium.com/@kayvan.sol2/deploying-apache-cassandra-cluster-3-nodes-with-docker-compose-3634ef8345e8
 
+https://groups.google.com/g/kairosdb-group/c/DoNPB48tMZk
+
   
