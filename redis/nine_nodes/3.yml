@@ -1,0 +1,120 @@
+version: '3.8'
+
+services:
+  redis-node-0:
+    image: redis/redis-stack:latest
+    environment:
+      - REDIS_PASSWORD=bitnami
+      - REDIS_CLUSTER_ENABLED=yes
+      - REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5
+      - REDIS_CLUSTER_MODE=yes
+      - REDIS_MASTER=1
+    ports:
+      - "7000:6379"
+    #volumes:
+     # - redis-cluster_data-0:/bitnami/redis/data
+    networks:
+      - redis-net
+
+  redis-node-1:
+    image: redis/redis-stack:latest
+    environment:
+      - REDIS_PASSWORD=bitnami
+      - REDIS_CLUSTER_ENABLED=yes
+      - REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5
+      - REDIS_CLUSTER_MODE=yes
+      - REDIS_MASTER=2
+    ports:
+      - "7001:6379"
+    #volumes:
+     # - redis-cluster_data-1:/bitnami/redis/data
+    networks:
+      - redis-net
+
+  redis-node-2:
+    image: redis/redis-stack:latest
+    environment:
+      - REDIS_PASSWORD=bitnami
+      - REDIS_CLUSTER_ENABLED=yes
+      - REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5
+      - REDIS_CLUSTER_MODE=yes
+      - REDIS_MASTER=3
+    ports:
+      - "7002:6379"
+
+    #volumes:
+     # - redis-cluster_data-2:/bitnami/redis/data
+    networks:
+      - redis-net
+
+  redis-node-3:
+    image: redis/redis-stack:latest
+    environment:
+      - REDIS_PASSWORD=bitnami
+      - REDIS_CLUSTER_ENABLED=yes
+      - REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5
+      - REDIS_CLUSTER_MODE=yes
+      - REDIS_MASTER=4
+    ports:
+      - "7003:6379"
+    #volumes:
+     # - redis-cluster_data-3:/bitnami/redis/data
+    networks:
+      - redis-net
+
+  redis-node-4:
+    image: redis/redis-stack:latest
+    environment:
+      - REDIS_PASSWORD=bitnami
+      - REDIS_CLUSTER_ENABLED=yes
+      - REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5
+      - REDIS_CLUSTER_MODE=yes
+      - REDIS_MASTER=5
+    ports:
+      - "7004:6379"
+    #volumes:
+   #   - redis-cluster_data-4:/bitnami/redis/data
+    networks:
+      - redis-net
+
+  redis-node-5:
+    image: redis/redis-stack:latest
+    environment:
+      - REDIS_PASSWORD=bitnami
+      - REDISCLI_AUTH=bitnami
+      - REDIS_CLUSTER_REPLICAS=1
+      - REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5
+      - REDIS_CLUSTER_CREATOR=yes
+      - REDIS_CLUSTER_ENABLED=yes
+      - REDIS_CLUSTER_EXTERNAL_ACCESS_ENABLED=true
+      - REDIS_CLUSTER_MODE=yes
+      - REDIS_MASTER=6
+    ports:
+      - "7005:6379"
+    depends_on:
+      - redis-node-0
+      - redis-node-1
+      - redis-node-2
+      - redis-node-3
+      - redis-node-4
+   # volumes:
+    #  - redis-cluster_data-5:/bitnami/redis/data
+    networks:
+      - redis-net
+
+#volumes:
+  #redis-cluster_data-0:
+   #    driver: local
+  #redis-cluster_data-1:
+   #    driver: local
+  #redis-cluster_data-2:
+   #    driver: local
+  #redis-cluster_data-3:
+   #    driver: local
+  #redis-cluster_data-4:
+   #    driver: local
+  #redis-cluster_data-5:
+     #  driver: local
+networks:
+  redis-net:
+    driver: overlay
