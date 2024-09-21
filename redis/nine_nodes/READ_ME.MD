@@ -5,3 +5,7 @@ redis-cli --cluster create 10.0.13.240:6379 10.0.13.244:6379 10.0.13.242:6379 10
 
 Links:
  https://github.com/bitnami/containers/blob/main/bitnami/redis-cluster/docker-compose.yml
+
+ https://github.com/zubujams/Redisdb_deployment_on_docker_swarm
+
+
