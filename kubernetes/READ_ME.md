@@ -12,3 +12,5 @@ minikube start --driver=docker
 links:
 
 https://github.com/kubernetes/minikube/issues/9762
+
+https://k3s.io/
